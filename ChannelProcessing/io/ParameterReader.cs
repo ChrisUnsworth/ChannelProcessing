@@ -11,7 +11,7 @@ namespace ChannelProcessing.io
         public ParameterReader(string fileName) : this(File.OpenText(fileName)) { }
 
         public ParameterReader(StreamReader streamReader) => 
-            _parameters = streamReader.ReadAllData().ToDictionary(d => d.id, d => (IScalar)new DataScalar(d.id, d.data[0]));
+            _parameters = streamReader.ReadAllData().ToDictionary(d => d.id, d => (IScalar)new DataScalar(d.data[0]));
 
         public bool TryGetParameterValue(char id, out IScalar value) => _parameters.TryGetValue(id, out value);
     }

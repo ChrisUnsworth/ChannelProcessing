@@ -11,7 +11,7 @@ namespace ChannelProcessing.io
         public ChannelReader(string fileName) : this(File.OpenText(fileName)) { }
 
         public ChannelReader(StreamReader streamReader) =>
-            _channels = streamReader.ReadAllData().ToDictionary(d => d.id, d => (IChannel)new DataChannel(d.id, d.data));
+            _channels = streamReader.ReadAllData().ToDictionary(d => d.id, d => (IChannel)new DataChannel(d.data));
 
         public bool TryGetChannelData(char id, out IChannel value) => _channels.TryGetValue(id, out value);
     }
