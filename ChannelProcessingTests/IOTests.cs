@@ -1,11 +1,11 @@
 using System.Reflection;
 using System.IO;
+using System.Linq;
 
 using Xunit;
 
 using ChannelProcessing.io;
 using ChannelProcessing.common;
-using System.Linq;
 
 namespace ChannelProcessingTests
 {

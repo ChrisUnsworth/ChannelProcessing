@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using ChannelProcessing.io;
+﻿using ChannelProcessing.io;
 
 string configFileName;
 
@@ -20,4 +18,3 @@ var dataSet = new DataSet(config);
 Console.WriteLine($"Writing Results");
 Writer.Write(dataSet, config);
 Console.WriteLine($"Done");
-

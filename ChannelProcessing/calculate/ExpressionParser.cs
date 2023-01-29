@@ -5,7 +5,6 @@ using ChannelProcessing.common;
 
 namespace ChannelProcessing.calculate
 {
-
     public static class ExpressionParser
     {
         public static IScalar ParseScalarExpression(string expression) => Parse(expression).AsScalar();

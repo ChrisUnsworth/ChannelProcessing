@@ -1,9 +1,4 @@
 ﻿using ChannelProcessing.calculate.common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ChannelProcessing.calculate.operators
 {
@@ -32,6 +27,5 @@ namespace ChannelProcessing.calculate.operators
             reader.Backtrack();
             return false;
         }
-
     }
 }

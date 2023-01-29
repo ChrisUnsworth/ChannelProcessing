@@ -1,14 +1,11 @@
-﻿using ChannelProcessing.calculate;
-using ChannelProcessing.common;
-using ChannelProcessing.io;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xunit;
+
+using ChannelProcessing.calculate;
+using ChannelProcessing.common;
+using ChannelProcessing.io;
 
 namespace ChannelProcessingTests
 {
@@ -151,6 +148,5 @@ namespace ChannelProcessingTests
             var scalar = ExpressionParser.ParseScalarExpression("Sum(Y + X)");
             Assert.Equal(18, scalar.GetValue(data));
         }
-
     }
 }

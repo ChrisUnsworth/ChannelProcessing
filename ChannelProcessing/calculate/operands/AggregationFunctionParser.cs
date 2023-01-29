@@ -39,6 +39,7 @@ namespace ChannelProcessing.calculate.operands
             reader.Backtrack();
             return false;
         }
+
         private static bool TryGetFunction(string value, out IAggregationFunction? function)
         {
             function = value.ToLowerInvariant() switch
