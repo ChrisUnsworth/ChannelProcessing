@@ -1,0 +1,9 @@
+[
+	{ "itemtype": "scalar_in_file", "filename": "C:\\Test\\Whatever" },
+	{ "itemtype": "channel_in_file", "filename": "C:\\Test\\Whatever" },
+	{ "itemtype": "expression", "id": "a", "datatype": "scalar", "expression": "1/n" },
+	{ "itemtype": "expression", "id": "X", "datatype": "channel", "expression": "A + 1" },
+	{ "itemtype": "scalar_out_file", "filename": "C:\\Test\\Whatever" },
+	{ "itemtype": "channel_out_file", "filename": "C:\\Test\\Whatever" },
+	{ "itemtype": "output", "ids": ["a", "X"] }
+]

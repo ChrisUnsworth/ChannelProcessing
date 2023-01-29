@@ -14,5 +14,7 @@ namespace ChannelProcessing.io
             _channels = streamReader.ReadAllData().ToDictionary(d => d.id, d => (IChannel)new DataChannel(d.data));
 
         public bool TryGetChannelData(char id, out IChannel value) => _channels.TryGetValue(id, out value);
+
+        public List<KeyValuePair<char, IChannel>> GetAll() => _channels.ToList();
     }
 }

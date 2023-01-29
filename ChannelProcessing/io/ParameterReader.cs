@@ -14,5 +14,7 @@ namespace ChannelProcessing.io
             _parameters = streamReader.ReadAllData().ToDictionary(d => d.id, d => (IScalar)new DataScalar(d.data[0]));
 
         public bool TryGetParameterValue(char id, out IScalar value) => _parameters.TryGetValue(id, out value);
+
+        public List<KeyValuePair<char, IScalar>> GetAll() => _parameters.ToList(); 
     }
 }

@@ -9,11 +9,13 @@
 
   <ItemGroup>
     <None Remove="data\channels.txt" />
+    <None Remove="data\config.txt" />
     <None Remove="data\parameters.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="data\channels.txt" />
+    <EmbeddedResource Include="data\config.txt" />
     <EmbeddedResource Include="data\parameters.txt" />
   </ItemGroup>
 

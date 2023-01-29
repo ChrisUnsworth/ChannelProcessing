@@ -1,0 +1,52 @@
+[
+	{
+		"itemtype": "scalar_in_file",
+		"filename": "parameters.txt"
+	},
+	{
+		"itemtype": "channel_in_file",
+		"filename": "channels.txt"
+	},
+	{
+		"itemtype": "expression",
+		"id": "Y",
+		"datatype": "channel",
+		"expression": "m*X+c"
+	},
+	{
+		"itemtype": "expression",
+		"id": "B",
+		"datatype": "channel",
+		"expression": "A+Y"
+	},
+	{
+		"itemtype": "expression",
+		"id": "b",
+		"datatype": "scalar",
+		"expression": "mean(B)"
+	},
+	{
+		"itemtype": "expression",
+		"id": "A",
+		"datatype": "channel",
+		"expression": "1/X"
+	},
+	{
+		"itemtype": "expression",
+		"id": "C",
+		"datatype": "channel",
+		"expression": "X+b"
+	},
+	{
+		"itemtype": "scalar_out_file",
+		"filename": "out_parameters.txt"
+	},
+	{
+		"itemtype": "channel_out_file",
+		"filename": "out_channels.txt"
+	},
+	{
+		"itemtype": "output",
+		"ids": [ "A", "B", "C", "Y", "X", "b", "c", "m" ]
+	}
+]

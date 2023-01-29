@@ -13,8 +13,9 @@ namespace ChannelProcessingTests
     {
         private const string parameterFilePath = "ChannelProcessingTests.data.parameters.txt";
         private const string channelFilePath = "ChannelProcessingTests.data.channels.txt";
+        private const string configFilePath = "ChannelProcessingTests.data.config.txt";
 
-        private Stream GetResourceStream(string resourceName)
+        private Stream? GetResourceStream(string resourceName)
         {
             var assembly = Assembly.GetExecutingAssembly();
             return assembly.GetManifestResourceStream(resourceName);
@@ -45,6 +46,22 @@ namespace ChannelProcessingTests
             Assert.Equal(100, data.Length);
             Assert.Equal(0.814723686393179, data[0]);
             Assert.Equal(0.337122644398882, data[^1]);
+        }
+
+        [Fact]
+        public void ConfigReader_Works()
+        {
+            using var stream = GetResourceStream(configFilePath);
+            var configReader = new ConfigReader(stream);
+            var config = configReader.ToList();
+
+            Assert.Equal(7, config.Count);
+            Assert.Equal("scalar_in_file", config[0].itemtype);
+            Assert.Equal("C:\\Test\\Whatever", config[0].filename);
+            Assert.Equal("channel_in_file", config[1].itemtype);
+            Assert.Equal("expression", config[2].itemtype);
+            Assert.Equal('a', config[2].id);
+            Assert.Equal("1/n", config[2].expression);
         }
     }
 }
